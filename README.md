@@ -5,13 +5,13 @@ For solved this problem you must edit `[macro-dial-one]`
 
 This macro used for call extensions to extsions and outside to extensions.
 
-1. Make sure the call waiting is enabled on your extensions
+1. Make sure the call waiting is enabled on your extensions.
 
-2. open `/etc/asterisk/extensions_additional.conf` and search for `[macro-dial-one]` then copy all this macro
+2. open `/etc/asterisk/extensions_additional.conf` and search for `[macro-dial-one]` then copy all this macro.
 
-3. open `/etc/asterisk/extensions_override_issabelpbx.conf` paste `[macro-dial-one]` here
+3. open `/etc/asterisk/extensions_override_issabelpbx.conf` paste `[macro-dial-one]` here.
 
-4. search for this line `exten => s,n(godial),Dial(${DSTRING},${ARG1},${D_OPTIONS})`  delete it and copy and paste code below instead of it
+4. search for this line `exten => s,n(godial),Dial(${DSTRING},${ARG1},${D_OPTIONS})`  delete it and copy and paste code below instead of it.
 
 ``` astereisk
 ;--== improve Call Waiting ==--;

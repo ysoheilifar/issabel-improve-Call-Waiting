@@ -20,15 +20,23 @@ exten => s,n,Set(D_OPTIONS=${D_OPTIONS}I)
 
 exten => s,n(godial),GotoIf($["${EXTENSION_STATE(${DEXTEN})}" = "INUSE"]?nextinuse:nextnotuse)
 exten => s,n(nextinuse),Playback(custom/ext-inused-pr)
-exten => s,n,Set(D_OPTIONS=${D_OPTIONS}m(moh))
+exten => s,n,Set(D_OPTIONS=${D_OPTIONS}m)
 
 exten => s,n(nextnotuse),Dial(${DSTRING},${ARG1},${D_OPTIONS})
 
 ;--== end of improve Call Waiting ==--;
 
 exten => s,n,ExecIf($["${DIALSTATUS}"="ANSWER" & "${CALLER_DEST}"!=""]?MacroExit())
+
 ```
-5. reload the asterisk
+
+6. upload sound `ext-inused-pr` to your issabelpbx. (this sound in persion language)
+```astereisk
+System Recordings → Upload recording
+
+```
+
+7. reload the asterisk
 ```
 asterisk -rx "reload"
 ```

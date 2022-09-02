@@ -11,7 +11,7 @@ This macro used for call extensions to extsions and outside to extensions.
 
 3. open `/etc/asterisk/extensions_override_issabelpbx.conf` paste `[macro-dial-one]` here
 
-4. search for this line `exten => s,n(godial),Dial(${DSTRING},${ARG1},${D_OPTIONS})`  delet it and edit it like below
+4. search for this line `exten => s,n(godial),Dial(${DSTRING},${ARG1},${D_OPTIONS})`  delete it and copy and paste code below instead of it
 
 ``` astereisk
 ;--== improve Call Waiting ==--;

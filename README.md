@@ -1,6 +1,9 @@
 # issabel improve Call Waiting
 Call Waiting on issabel has the problem that the caller cannot understand that he is waiting behind the line.
 
+for solved this problem you must edit `[macro-dial-one]`
+this macro used for call extensions to extsions and outside to extensions
+
 1. Make sure the call waiting is enabled on your extensions
 
 2. open `/etc/asterisk/extensions_additional.conf` and search for `[macro-dial-one]` then copy all this macro

@@ -14,8 +14,6 @@ This macro used for call extensions to extsions and outside to extensions.
 4. search for this line `exten => s,n(godial),Dial(${DSTRING},${ARG1},${D_OPTIONS})`  delet it and edit it like below
 
 ``` astereisk
-exten => s,n,Set(D_OPTIONS=${D_OPTIONS}I)
-
 ;--== improve Call Waiting ==--;
 
 exten => s,n(godial),GotoIf($["${EXTENSION_STATE(${DEXTEN})}" = "INUSE"]?nextinuse:nextnotuse)
@@ -25,8 +23,6 @@ exten => s,n,Set(D_OPTIONS=${D_OPTIONS}m)
 exten => s,n(nextnotuse),Dial(${DSTRING},${ARG1},${D_OPTIONS})
 
 ;--== end of improve Call Waiting ==--;
-
-exten => s,n,ExecIf($["${DIALSTATUS}"="ANSWER" & "${CALLER_DEST}"!=""]?MacroExit())
 
 ```
 
